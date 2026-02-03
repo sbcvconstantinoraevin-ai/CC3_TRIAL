@@ -1,1 +1,30 @@
+package CC3Correctdawto;
 
+public class Main {
+    public static void main(String[] args) {
+        // Initialization using thematic naming [cite: 10]
+        Product apple = new Product("Red Apple", 1.50);
+        Customer user = new Customer("Alex", 50.00);
+        ShoppingCart cart = new ShoppingCart(user);
+        cart.addProduct(apple);
+
+        // Building the single output stream [cite: 16]
+        StringBuilder finalOutput = new StringBuilder();
+
+        // Collecting Identity Roles [cite: 18]
+        finalOutput.append("--- ROLES ---\n");
+        finalOutput.append(apple.identifyRole()).append("\n");
+        finalOutput.append(user.identifyRole()).append("\n");
+        finalOutput.append(cart.identifyRole()).append("\n\n");
+
+        // Collecting Transaction Logic
+        double total = cart.calculateTotal();
+        finalOutput.append("--- TRANSACTION ---\n");
+        finalOutput.append("Item: ").append(apple.getProductDetails()).append("\n");
+        finalOutput.append("Total: $").append(total).append("\n");
+        finalOutput.append(user.processPayment(total));
+
+        // The "One Print" Rule implementation
+        System.out.println(finalOutput.toString());
+    }
+}
