@@ -1,4 +1,4 @@
-package CC3Correctdawto;
+    package CC3Correctdawto;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +13,14 @@ public class ShoppingCart {
 
     public void addProduct(Product p) {
         products.add(p);
+    }
+    //total (uses Product discount)
+    public double calculateDiscountedTotal() {
+        double total = 0;
+        for (Product p : products) {
+            total += p.getDiscountedPrice();
+        }
+        return total;
     }
     //
     // Functional method [cite: 13]
