@@ -22,6 +22,9 @@ public class Main {
         finalOutput.append("--- TRANSACTION ---\n");
         finalOutput.append("Item: ").append(apple.getProductDetails()).append("\n");
         finalOutput.append("Total: $").append(total).append("\n");
+        finalOutput.append("Discount Applied: 5%\n");
+        finalOutput.append("Discounted Total: $").append(discountedTotal).append("\n");
+        finalOutput.append(user.processPayment(discountedTotal));
         finalOutput.append(user.processPayment(total));
 
         // The "One Print" Rule implementation
