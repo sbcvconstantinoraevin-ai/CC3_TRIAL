@@ -14,7 +14,10 @@ public class Product {
     public String getProductDetails() {
         return nameOfFood + " ($" + price + ")";
     }
-    
+    //publicAdded method (5% discount)
+    public double getDiscountedPrice() {
+        return price * 0.95; // 5% discount
+    }
     //
     // Identity method [cite: 18]
     public String identifyRole() {
